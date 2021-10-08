@@ -1,36 +1,46 @@
-﻿@model IEnumerable<JokesApp.Models.DocumentationNotes>
-
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Documentation Notes</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Example)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Example)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section>
+    <p class="display-4">Step 1: Create Model</p>
+    <ol>
+        <li>Right click <pre>Models</pre> folder</li>
+        <li>Select 'Add' then 'Class..'</li>
+        <li>Change 'Class.cs' name to preferred Model Name<br />
+        <strong>Note:</strong> .cs will be automatically appended if not typed into input box when clicking 'Add'.</li>
+        <li>EntityFramework requires a primary key to be defined in the model before creating a Container, add <pre>public int Id { get; set; }</pre> to satisfy this requirement.</li>
+    </ol>
+
+    <p class="display-4">Step 2: Create a Controller</p>
+    <ol>
+        <li>Right click <pre>Controllers</pre> folder</li>
+        <li>Select 'Add' then 'Controller'</li>
+        <li>Select 'MVC Controller with views, using Entity Framework'</li>
+        <li>Select Model created in Step 1, from 'Model class' dropdown</li>
+        <li>*If applicable, select 'Database context class' from dropdown</li>
+        <li>Check 'Generate Views', 'Reference script libraries', 'Use a layout page' to quickly generate necessary files</li>
+        <li>Set Controller Name to preferred name<br />
+        <strong>Note:</strong> A good practice to follow is to name the Controller similar to the Model</li>
+        <li>Click 'Add' to create new Container and premade files</li>
+    </ol>
+
+    <p class="display-4">Step 3: Add View to Top Nav</p>
+    <ol>
+        <li>Open <pre>Views/Shared/_Layout.cshtml</pre></li>
+        <li>Copy an existing nav-item and paste in a new line</li>
+        <li>Set <pre>asp-controller</pre> as Model Name</li>
+        <li>Set <pre>asp-action</pre> to Index<br />
+        <strong>Note:</strong> Set the asp-action to whatever .cshtml landing page should be loaded</li>
+    </ol>
+
+    <p>*If database is used</p>
+    <p class="display-4">Step 4: Add Migration</p>
+    <ol>
+        <li>Run <pre>add-migration [migration name]</pre> in Package Manager Console (PM)</li>
+        <li>Run <pre>update-database</pre></li>
+    </ol>
+</section>

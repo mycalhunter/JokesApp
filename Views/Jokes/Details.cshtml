@@ -1,0 +1,33 @@
+﻿@model JokesApp.Models.Joke
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <button type="button" class="btn btn-warning">
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit Joke</a>
+    </button>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-12">
+            <h4>
+                Question<br />
+                <small class="text-muted">@Html.DisplayFor(model => model.JokeQuestion)</small>
+            </h4>
+        </dd>
+        <dd class="col-sm-12">
+            <h4>
+                Answer<br />
+                <small class="text-muted">@Html.DisplayFor(model => model.JokeAnswer)</small>
+            </h4>
+        </dd>
+    </dl>
+</div>
+<div>
+    <button type="button" class="btn btn-dark">
+        <a asp-action="Index">Back to List</a>
+    </button>
+</div>

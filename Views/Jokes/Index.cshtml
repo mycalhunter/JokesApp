@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@model IEnumerable<JokesApp.Models.Joke>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{int i = 0;}
+<div class="row">
+    <div class="col-sm-12 col-md-10"><p class="display-4">Your Jokes</p></div>
+    <div class="col-sm-12 col-md-2"><button type="button" class="btn btn-primary"><a asp-action="Create">Create New</a></button></div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <p>
+            @foreach (var item in Model)
+            {
+                i++;
+            }
+            @{
+                @:Total Jokes: @i <!-- output a single line -->
+            }
+        </p>
+    </div>
+</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Joke Question
+                </th>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <th>
+                        Joke Author
+                    </th>
+                }
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <!-- Logged In -->
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <td>
+                            <span class="lead">@Html.DisplayFor(modelItem => item.JokeQuestion)</span><br /><b><button type="button" class="btn btn-dark"><a asp-action="Details" asp-route-id="@item.Id">View Answer</a></button></b>
+                        </td>
+
+                        <td>
+                            @User.Identity.Name
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-outline-warning">Edit</button></a>
+                            <a asp-action="Delete" asp-route-id="@item.Id"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+                        </td>
+                    }
+
+                    <!-- Not Logged In -->
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JokeQuestion)
+                        </td>
+
+                        <td></td>
+
+                        <td>
+                            <p><a asp-area="Identity" asp-page="/Account/Login">Log In</a></p>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>

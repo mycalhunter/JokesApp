@@ -6,18 +6,20 @@ namespace JokesApp.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Example",
-                table: "DocumentationNotes",
-                newName: "Note");
+            migrationBuilder.CreateTable(
+                name: "DocumentationNotes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Example = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Note",
-                table: "DocumentationNotes",
-                newName: "Example");
+            migrationBuilder.DropTable(
+                name: "DocumentationNotes");
         }
     }
 }

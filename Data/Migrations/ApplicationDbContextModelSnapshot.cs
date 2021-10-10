@@ -26,7 +26,7 @@ namespace JokesApp.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Note")
+                    b.Property<string>("Example")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

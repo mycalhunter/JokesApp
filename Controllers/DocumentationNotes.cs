@@ -8,7 +8,7 @@ namespace JokesApp.Controllers
 {
     public class DocumentationNotes : Controller
     {
-        public IActionResult Index()
+        public IActionResult NewPage123()
         {
             return View();
         }

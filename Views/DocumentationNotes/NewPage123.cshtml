@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<JokesApp.Models.DocumentationNotes>  
+@{    
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -50,4 +51,31 @@
             <li>Run <code>add-migration [migration name]</code> in Package Manager Console (PM)</li>
             <li>Run <code>update-database</code></li>
         </ol>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <p class="display-4">
+                @{
+                    DateTime today = DateTime.Today;
+                    // @today.ToString("d"); // 01/01/2021
+                    @today.ToString("D"); // Monday January 01, 2021
+                }
+            </p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <p class="display-4">Holiday this Month</p>
+            <p>
+                <span style="color:red;">
+                    @{
+                        @DocumentationNotes.Holiday(); // call method
+                    }
+                </span>
+                </p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <p class="display-4">Test</p>
+        </div>
+    </div>
 </section>

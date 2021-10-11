@@ -10,8 +10,10 @@
     <ol>
         <li>Right click <code>Models</code> folder</li>
         <li>Select 'Add' then 'Class..'</li>
-        <li>Change 'Class.cs' name to preferred Model Name<br />
-        <strong>Note:</strong> .cs will be automatically appended if not typed into input box when clicking 'Add'.</li>
+        <li>
+            Change 'Class.cs' name to preferred Model Name<br />
+            <strong>Note:</strong> .cs will be automatically appended if not typed into input box when clicking 'Add'.
+        </li>
         <li>EntityFramework requires a primary key to be defined in the model before creating a Container, add <code>public int Id { get; set; }</code> to satisfy this requirement.</li>
     </ol>
 
@@ -23,8 +25,10 @@
         <li>Select Model created in Step 1, from 'Model class' dropdown</li>
         <li>*If applicable, select 'Database context class' from dropdown</li>
         <li>Check 'Generate Views', 'Reference script libraries', 'Use a layout page' to quickly generate necessary files</li>
-        <li>Set Controller Name to preferred name<br />
-        <strong>Note:</strong> A good practice to follow is to name the Controller similar to the Model</li>
+        <li>
+            Set Controller Name to preferred name<br />
+            <strong>Note:</strong> A good practice to follow is to name the Controller similar to the Model
+        </li>
         <li>Click 'Add' to create new Container and premade files</li>
     </ol>
 
@@ -33,14 +37,17 @@
         <li>Open <code>Views/Shared/_Layout.cshtml</code></li>
         <li>Copy an existing nav-item and paste in a new line</li>
         <li>Set <code>asp-controller</code> as Model Name</li>
-        <li>Set <code>asp-action</code> to Index<br />
-        <strong>Note:</strong> Set the asp-action to whatever .cshtml landing page should be loaded</li>
+        <li>
+            Set <code>asp-action</code> to Index<br />
+            <strong>Note:</strong> Set the asp-action to whatever .cshtml landing page should be loaded
+        </li>
     </ol>
 
-    <p>*If database is used</h4>
-    <h4>Step 4: Add Migration</h4>
-    <ol>
-        <li>Run <code>add-migration [migration name]</code> in Package Manager Console (PM)</li>
-        <li>Run <code>update-database</code></li>
-    </ol>
+    <p>
+        *If database is used</h4>
+        <h4>Step 4: Add Migration</h4>
+        <ol>
+            <li>Run <code>add-migration [migration name]</code> in Package Manager Console (PM)</li>
+            <li>Run <code>update-database</code></li>
+        </ol>
 </section>

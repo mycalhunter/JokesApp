@@ -29,7 +29,7 @@ namespace JokesApp.Controllers
         // GET: Jokes/ShowSearchForm
         public async Task<IActionResult> ShowSearchForm()
         {
-            return View(); // return View named ShowSearchForm
+            return View("Index", await _context.Joke.ToListAsync()); // return View named ShowSearchForm
         }
 
         // POST: Jokes/ShowSearchResults

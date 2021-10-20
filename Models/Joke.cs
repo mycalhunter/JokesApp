@@ -24,7 +24,12 @@ namespace JokesApp.Models
         public static string CheckOperatingSystem()
         {
             string osNameAndVersion = System.Runtime.InteropServices.RuntimeInformation.OSDescription; // get info of users operating system
-            if(osNameAndVersion != null)
+
+            bool osWindows = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows); // if OS is Windows
+            bool osLinux = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux); // if OS is Linux
+            bool osOSX = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.OSX); // if OS is Mac OSX
+
+            if (osNameAndVersion != null)
             {
                 return osNameAndVersion; // output operating system name and version
             }
@@ -33,13 +38,15 @@ namespace JokesApp.Models
 
         public static string CheckCurrentTime()
         {
-            string currentTime = DateTime.Now.ToString("h:mm:ss tt");
+            string currentTime = DateTime.Now.ToString("h:mm tt");
             if(currentTime != null)
             {
                 return currentTime;
             }
             return "You have transcended time and space";
         }
+
+
 
     }
 }

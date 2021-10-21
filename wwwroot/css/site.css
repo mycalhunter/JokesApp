@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&display=swap');
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
@@ -61,9 +61,12 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  background-color: #eee;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #eee;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 200 !important;
 }
 
 .container {
@@ -88,7 +91,6 @@ a, a:hover {
     padding: 18px 0 6px 0;
     text-align: center;
     font-size: 22px;
-    font-family: 'Montserrat', sans-serif;
 }
     #notice_banner p {
         font-weight: 600;
@@ -105,7 +107,7 @@ a, a:hover {
 span#header_time {
     margin-left: 10px;
     font-weight: 600;
-    color: #4a5db9;
+    color: #fff;
     letter-spacing: 8px;
 }
 #home_hero {
@@ -123,17 +125,14 @@ span#header_time {
     margin-right: 16rem;
     width: 427px;
     min-height: 250px;
-    background-color: #0863d859;
-    border-radius: 10px;
-    color: white;
 }
-.cta_primary {
-    border: 1px solid black;
-    border-radius: 50px;
-    padding: 10px 15px;
-    background-color: #000000d1;
-    color: white;
-    box-shadow: 2px 2px 2px #00000087;
+.cta_primary, .cta_primary a {
+    color: #4a5db9;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 1.25rem;
+    text-decoration: none;
 }
 .navbar {
     padding-left: 15%;
@@ -141,22 +140,106 @@ span#header_time {
 nav.navbar.navbar-expand-sm.navbar-toggleable-sm.navbar-dark.bg-dark.border-bottom.box-shadow.mb-3 {
     margin-bottom: 0 !important;
 }
-#home_tile_container {
-    min-width: 100vw;
-    text-align: center;
-    padding: 10px;
+#output {
+    width: 100vw;
 }
-#home_tile_container ul {
-    list-style: none;
-    display: flex;
-    text-align: center;
-    padding-left: 0;
-}
-#home_tile_container ul li {
-    width: calc(100% / 5);
-    border: 1px solid #00000029;
-    height: 8rem;
-    background: #eaeaea;
-    margin: 5px 10px;
+#output .item {
     padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 200;
+    text-align: center;
+    width: calc(100% / 5);
+    display: inline-block;
+}
+.row {
+    min-width: 100vw;
+}
+.row img {
+    width: 100%;
+}
+.img-300 {
+    max-width: 300px;
+}
+.row p {
+    color: black;
+    font-weight: 500;
+}
+p.sub-header {
+    text-transform: uppercase;
+    font-color: grey;
+    font-weight: 200;
+}
+img.float-right {
+    float: right;
+}
+.text-right {
+    text-align: right;
+}
+
+.support-center {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #ececec;
+}
+}
+.support-center ul {
+    list-style-type: none;
+    display: block;
+    margin: 2rem 0;
+}
+.support-center ul li {
+    display: inline-flex;
+    flex-direction: row;
+    color: #4a5db9;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.support-center ul li:after {
+    content: "|";
+    margin: 0 10px;
+    color: black;
+}
+.support-center ul li:last-child:after {
+    content: "";
+    margin: 0 0 0 10px;
+}
+.ad-desc {
+    display: block;
+    height: 100%;
+    padding-top: 25%;
+}
+.top-sellers {
+    padding: 50px 75px !important;
+    margin-bottom: 75px;
+}
+.quick-guide {
+    padding: 20px 40px !important;
+}
+.quick-start {
+    width: calc(100% / 3 - 80px) !important;
+    background-color: #f9f9f9;
+    padding: 20px 20px;
+    margin: 20px auto;
+    height: 250px;
+}
+h3.quick-start-header {
+    border-bottom: 1px solid #bfbfbf;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.15rem;
+}
+.quick-start img.quick-start-img {
+    width: auto !important;
+}
+.quick-start .row .col-md-4 {
+    width: auto !important;
+}
+.quick-start .row .col-md-12 {
+    width: 325px;
+}
+span.welcome_user {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 1.25rem;
 }

@@ -14,25 +14,108 @@
         <h1>Drive Excellence</h1>
         <p class="home_hero sub_text">Deliver performance and unmatched creativity!</p>
         <button class="cta_primary">Learn More..</button>
-     </div>
+    </div>
 </div>
 
-<div id="home_tile_container">
-    <ul>
-        <li><span class="material-icons-outlined">
-account_circle
-</span></li>
-        <li><span class="material-icons-outlined">
-shopping_cart
-</span></li>
-        <li><span class="material-icons-outlined">
-schedule
-</span></li>
-        <li><span class="material-icons-outlined">
-question_answer
-</span></li>
-        <li><span class="material-icons-outlined">
-leaderboard
-</span></li>
-    </ul>
+<div id="output"></div>
+<div class="row quick-guide">
+    <span class="welcome_user">Welcome Back
+@if (SignInManager.IsSignedIn(User)) 
+{   
+    @:, @User.Identity.Name
+} else
+{
+    @:!  
+}
+</span>
+    <div class="col-md-4 col-sm-12 quick-start">
+        <h3 class="quick-start-header">Get It Fast</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <img class="quick-start-img" src="https://i.dell.com/sites/csimages/UberHomePage_Imagery/all/xpss.png" />
+            </div>
+            <div class="col-md-8">
+                <p>Get free next day delivery on select items.</p>
+            </div>
+        </div>
+        <button class="cta_primary">Shop Now</button>
+    </div>
+    <div class="col-md-4 col-sm-12 quick-start">
+        <h3 class="quick-start-header">Free Shipping</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Enjoy free standard shipping on everything. No minimum purchase required.</p>
+            </div>
+        </div>
+        <button class="cta_primary">Learn More</button>
+    </div>
+    <div class="col-md-4 col-sm-12 quick-start">
+        <h3 class="quick-start-header">Access Your Perks</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Sign in to your account to enjoy free shipping, track current orders, and more.</p>
+            </div>
+        </div>
+        <button class="cta_primary"><a asp-area="Identity" asp-page="/Account/Login">Sign In</a></button>
+    </div>
+</div>
+<div class="row altGrey">
+    <div class="col-md-7 col-sm-12 img-300"><img class="float-right" src="https://i.dell.com/das/dih.ashx/1200w/sites/csimages/UberHomePage_Imagery/all/CS2202G0029_023_581284_us_cs_co_dir_fy22q3w8_site_next-day-delivery-con-9-23--10-20_2000x1466_right-facing2127130227271468.jpg" /></div>
+    <div class="col-md-5 col-sm-12">
+        <div class="ad-desc">
+            <p class="sub-header">Fast Shipping PCs</p>
+            <h2>Buy today. Get it tomorrow.</h2>
+            <p>Next business day delivery available on select products with free express delivery upgrade.</p>
+            <button class="cta_primary">View the Deals</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="support-center">
+        <h2>Dell Support</h2>
+        <ul>
+            <li>Support Home</li>
+            <li>Drivers & Downloads</li>
+            <li>Order Support</li>
+            <li>Warranty & Contracts</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 col-sm-12 text-right">
+        <div class="ad-desc">
+            <p class="sub-header">Top Sellers</p>
+            <h2>All the tech essentials</h2>
+            <p>Explore a superior selection of top-brand electronics & accessories at up to 30% off.</p>
+            <button class="cta_primary">Electronic Deals</button>
+        </div>
+        </div>
+    <div class="col-md-7 col-sm-12 img-300"><img src="https://i.dell.com/das/dih.ashx/1200w/sites/csimages/UberHomePage_Imagery/all/CS2103G0051_023_582901_us_cs_co_dir_fy22q3w11_site_top-sellers-con-10-14--10-27_2000x14662129130229382100.jpg" /></div>    
+</div>
+<div class="row">
+    <div class="col-md-7 col-sm-12 img-300"><img class="float-right" src="https://i.dell.com/das/dih.ashx/1200w/sites/csimages/UberHomePage_Imagery/all/aw_m15_r6_sit_banner_2000x1466_left2115010815365914.jpg" /></div>
+    <div class="col-md-5 col-sm-12">
+        <div class="ad-desc">
+            <p class="sub-header">AlienWare</p>
+            <h2>BOUNDARY-BREAKING VISUALS</h2>
+            <p>The new Alienware m15 R6. Uncompromised visual performance with everything but boundaries.</p>
+            <button class="cta_primary">Start Gaming</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12 top-sellers" style="border-right:1px solid black;">
+        <p class="sub-header">Top Sellers</p>
+        <h2>Top tech now for less</h2>
+        <img src="https://i.dell.com/das/dih.ashx/1200w/sites/csimages/UberHomePage_Imagery/all/CS2103G0051_023_582901_us_cs_co_dir_fy22q3w11_site_top-sellers-con-10-14--10-27_800x400_12159130259496660.jpg" />
+        <p>Save up to 20% on top tech that everyone wants.</p>
+        <button class="cta_primary">PC Deals</button>
+    </div>
+    <div class="col-md-6 col-sm-12 top-sellers">
+        <p class="sub-header">Top Sellers</p>
+        <h2>Popular tech. Premium offers.</h2>
+        <img src="https://i.dell.com/das/dih.ashx/1200w/sites/csimages/UberHomePage_Imagery/all/CS2103G0051_023_582901_us_cs_co_dir_fy22q3w11_site_top-sellers-con-10-14--10-27_800x400_22159130259497752.jpg" />
+        <p>Take advantage of these special discounts on high tech.</p>
+        <button class="cta_primary">Electronics Deals</button>
+    </div>
 </div>

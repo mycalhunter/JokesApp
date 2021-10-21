@@ -6,13 +6,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Net;
+using System.IO;
+
 
 namespace JokesApp
 {
     public class Program
-    {
-        public static void Main(string[] args)
-        {
+    { 
+
+        public static void Main(string[] args) {
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -21,6 +25,6 @@ namespace JokesApp
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                });        
     }
 }

@@ -24,7 +24,7 @@
             public string Description { get; set; } // Text Area<br />
             public string Password { get; set; }<br />
             public string StudentSubject { get; set; }<br />
-            public bool isActive { get; set; } // checkbox<br />
+            public bool IsActive { get; set; } // checkbox<br />
             public bool isNewlyEnrolled { get; set; }<br />
             public DateTime DoB { get; set; }<br />
             public Gender StudentGender { get; set; } // dropdown<br />
@@ -78,12 +78,12 @@
 
     <p class="sub-header">Checkbox</p>
     <div class="dropdown">
-        @Html.CheckBoxFor(m => m.isActive)
+        @Html.CheckBoxFor(m => m.IsActive)
     </div>
 
     <div class="code-container">
         <code>
-            &commat;Html.CheckBoxFor(m => m.isActive)
+            &commat;Html.CheckBoxFor(m => m.IsActive)
         </code>
     </div>
 
@@ -168,7 +168,7 @@
         Student Name: @Html.EditorFor(m => m.StudentName) <br />
         Age: @Html.EditorFor(m => m.Age) <br />
         Password: @Html.EditorFor(m => m.Password) <br />
-        Newly Enrolled: @Html.EditorFor(m => m.isNewlyEnrolled) <br />
+        Newly Enrolled: @Html.EditorFor(m => m.IsNewlyEnrolled) <br />
         Date of Birth: @Html.EditorFor(m => m.DoB) <br />
     </div>
 

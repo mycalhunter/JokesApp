@@ -21,7 +21,7 @@
         </div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">JokesApp</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img width="25" height="25" encode="base64" src="~/images/logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,11 +34,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Jokes" asp-action="Index">Jokes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Jokes" asp-action="ShowSearchForm">Search</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jokes
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Jokes" asp-action="Index">Jokes List</a></li>
+                                <li><a class="nav-link text-light" asp-area="" asp-controller="Jokes" asp-action="ShowSearchForm">Search..</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="DocumentationNotes" asp-action="NewPage123">Documentation</a>

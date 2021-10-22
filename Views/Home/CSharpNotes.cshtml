@@ -1,0 +1,193 @@
+﻿@using JokesApp.Models
+
+@model Tutorials
+
+
+
+@{
+    ViewData["Title"] = "Notes and Tips";
+}
+<div style="padding: 40px">
+    <h1>@ViewData["Title"]</h1>
+
+    <p><a href="https://www.tutorialsteacher.com/mvc/htmlhelper-password-passwordfor" target="_blank">C# Tutorials</a></p>
+
+    <div class="code-container">
+        <code>
+            public class Tutorials<br />
+            {<br />
+            public int StudentId { get; set; } // hidden field<br />
+            public int Age { get; set; }<br />
+            public string StudentName { get; set; } // Text Box<br />
+            public string GenderRadioMale { get; set; } // radio<br />
+            public string GenderRadioFemale { get; set; } // radio<br />
+            public string Description { get; set; } // Text Area<br />
+            public string Password { get; set; }<br />
+            public string StudentSubject { get; set; }<br />
+            public bool isActive { get; set; } // checkbox<br />
+            public bool isNewlyEnrolled { get; set; }<br />
+            public DateTime DoB { get; set; }<br />
+            public Gender StudentGender { get; set; } // dropdown<br />
+            }<br />
+            <br />
+            // Enumerable Options for StudentGender dropdown list<br />
+            public enum Gender<br />
+            {<br />
+            Male,<br />
+            Female<br />
+            }
+
+            /*
+            &commat;Html - 
+            */
+        </code>
+    </div>
+
+    <p class="sub-header">Dropdowns</p>
+    <div class="dropdown">
+        @Html.DropDownListFor(m => m.StudentGender, new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender")
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.DropDownListFor(m => m.StudentGender, new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender")
+        </code>
+    </div>
+
+
+    <p class="sub-header">Radio Buttons</p>
+    <div class="dropdown">
+        @Html.LabelFor(m => m.GenderRadioMale, "Male")
+        @Html.RadioButtonFor(m => m.GenderRadioMale, "Male")
+
+        @Html.LabelFor(m => m.GenderRadioFemale, "Female")
+        @Html.RadioButtonFor(m => m.GenderRadioFemale, "Female")
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.LabelFor(m => m.GenderRadioMale, "Male")<br />
+            &commat;Html.RadioButtonFor(m => m.GenderRadioMale, "Male")<br />
+            <br />
+            &commat;Html.LabelFor(m => m.GenderRadioFemale, "Female")<br />
+            &commat;Html.RadioButtonFor(m => m.GenderRadioFemale, "Female")<br />
+        </code>
+    </div>
+
+
+
+    <p class="sub-header">Checkbox</p>
+    <div class="dropdown">
+        @Html.CheckBoxFor(m => m.isActive)
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.CheckBoxFor(m => m.isActive)
+        </code>
+    </div>
+
+
+
+    <p class="sub-header">Text Area</p>
+    <div class="dropdown">
+        @Html.TextAreaFor(m => m.Description)
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.TextAreaFor(m => m.Description)
+        </code>
+    </div>
+
+
+    <p class="sub-header">Text Box</p>
+    <div class="dropdown">
+        @Html.TextBoxFor(m => m.StudentName)
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.TextBoxFor(m => m.StudentName)
+        </code>
+    </div>
+
+
+    <p class="sub-header">Hidden Field</p>
+    <div class="dropdown">
+        @Html.HiddenFor(m => m.StudentId)
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.HiddenFor(m => m.StudentId)
+        </code>
+    </div>
+
+
+    <p class="sub-header">Password</p>
+    <div class="dropdown">
+        @Html.PasswordFor(m => m.Password)
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.PasswordFor(m => m.Password)
+        </code>
+    </div>
+
+
+
+    <p class="sub-header">Display</p>
+    <div class="dropdown">
+        @Html.DisplayFor(m => m.StudentSubject)
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.DisplayFor(m => m.StudentSubject)
+        </code>
+    </div>
+
+
+    <p class="sub-header">Label</p>
+    <div class="dropdown">
+        @Html.LabelFor(m => m.StudentSubject)
+        @Html.Id()
+    </div>
+
+    <div class="code-container">
+        <code>
+            &commat;Html.LabelFor(m => m.StudentSubject)
+        </code>
+    </div>
+
+
+    <p class="sub-header">Editor</p>
+    <div class="dropdown">
+        Student ID: @Html.EditorFor(m => m.StudentId) <br />
+        Student Name: @Html.EditorFor(m => m.StudentName) <br />
+        Age: @Html.EditorFor(m => m.Age) <br />
+        Password: @Html.EditorFor(m => m.Password) <br />
+        Newly Enrolled: @Html.EditorFor(m => m.isNewlyEnrolled) <br />
+        Date of Birth: @Html.EditorFor(m => m.DoB) <br />
+    </div>
+
+    <div class="code-container">
+        <code>
+            Student ID: &commat;Html.EditorFor(m => m.StudentId) <br />
+            Student Name: &commat;Html.EditorFor(m => m.StudentName) <br />
+            Age: &commat;Html.EditorFor(m => m.Age) <br />
+            Password: &commat;Html.EditorFor(m => m.Password) <br />
+            Newly Enrolled: &commat;Html.EditorFor(m => m.isNewlyEnrolled) <br />
+            Date of Birth: &commat;Html.EditorFor(m => m.DoB) <br />
+        </code>
+    </div>
+
+
+
+
+
+
+
+</div>

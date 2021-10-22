@@ -24,7 +24,7 @@ namespace JokesApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult CSharpNotes()
         {
             return View();
         }

@@ -248,3 +248,9 @@ span.welcome_user {
     margin: 10px 30px;
     background-color: #ececec;
 }
+.code-container {
+    background-color: #eaeaea61;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0 30px 0;
+}

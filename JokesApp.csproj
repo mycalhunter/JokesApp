@@ -16,4 +16,8 @@
     <PackageReference Include="UAParser" Version="3.1.47" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\doc\10_21_resume.pdf" />
+  </ItemGroup>
+
 </Project>

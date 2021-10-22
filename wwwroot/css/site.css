@@ -243,3 +243,8 @@ span.welcome_user {
     font-weight: 200;
     font-size: 1.25rem;
 }
+.dropdown select {
+    padding: 10px;
+    margin: 10px 30px;
+    background-color: #ececec;
+}
